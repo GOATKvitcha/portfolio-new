@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Your Name | Professional Portfolio</title>
+
+<link rel="stylesheet" href="port1.css">
+</head>
+
+<body>
+
+<header>
+<nav>
+<div class="logo">Portfolio</div>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<button class="toggle-btn" onclick="toggleTheme()">
+🌙 Theme
+</button>
+</nav>
+</header>
+
+<section class="hero">
+<div>
+<h1>Hi, I'm <span>Harikesh C</span></h1>
+
+<div class="typing" id="typing"></div>
+
+<p>
+Passionate developer creating scalable applications,
+beautiful interfaces, and innovative digital solutions.
+Focused on delivering real business value through technology.
+</p>
+
+<div class="buttons">
+<a href="#projects" class="btn primary">View Projects</a>
+<a href="#contact" class="btn secondary">Contact Me</a>
+</div>
+
+</div>
+</section>
+
+<section id="about">
+<h2 class="section-title">About Me</h2>
+
+<div class="about">
+
+<div class="profile"><img src="" alt="profile"></div>
+
+<div>
+<p>
+I am a software developer passionate about modern web technologies,
+user experience design, artificial intelligence, and scalable systems.
+My goal is to build impactful products that solve real-world challenges.
+</p>
+</div>
+
+</div>
+</section>
+
+<section id="skills">
+<h2 class="section-title">Skills</h2>
+
+<div class="skill">
+<div class="skill-header">
+<span>HTML/CSS</span>
+<span>95%</span>
+</div>
+<div class="bar">
+<div class="progress" style="width:95%"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-header">
+<span>JavaScript</span>
+<span>90%</span>
+</div>
+<div class="bar">
+<div class="progress" style="width:90%"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-header">
+<span>React</span>
+<span>85%</span>
+</div>
+<div class="bar">
+<div class="progress" style="width:85%"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-header">
+<span>Python</span>
+<span>100%</span>
+</div>
+<div class="bar">
+<div class="progress" style="width:100%"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-header">
+<span>C/CPP</span>
+<span>100%</span>
+</div>
+<div class="bar">
+<div class="progress" style="width:100%"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-header">
+<span>MySQL</span>
+<span>100%</span>
+</div>
+<div class="bar">
+<div class="progress" style="width:100%"></div>
+</div>
+</div>
+
+</section>
+
+<section id="education">
+<h2 class="section-title">Education</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>BSC Computer science</h3>
+<p>Kannur University | 2024 - 2028</p>
+<p>CGPA: 8.9/10</p>
+</div>
+
+</div>
+</section>
+
+<section id="projects">
+<h2 class="section-title">Projects</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Cloud-Based Task Automation Platform</h3>
+<p>Responsive online shopping platform with payment integration.</p>
+</div>
+
+<div class="card">
+<h3>AI Chat Assistant</h3>
+<p>Conversational AI assistant using machine learning.</p>
+</div>
+
+<div class="card">
+<h3>Portfolio Website</h3>
+<p>Modern responsive portfolio with animations and theme switching.</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2 class="section-title">Experience</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Frontend Developer Intern</h3>
+<p>Worked on enterprise web applications and UI optimization.</p>
+</div>
+
+<div class="card">
+<h3>Freelance Developer</h3>
+<p>Built websites and custom solutions for multiple clients.</p>
+</div>
+
+</div>
+</section>
+
+<section id="contact">
+<h2 class="section-title">Contact</h2>
+
+<form class="contact">
+
+<input type="text" placeholder="Your Name">
+
+<input type="email" placeholder="Email Address">
+
+<textarea rows="6" placeholder="Your Message"></textarea>
+
+<button type="submit">
+Send Message
+</button>
+
+</form>
+</section>
+
+<footer>
+© 2026 Harikesh C | Professional Portfolio
+</footer>
+
+<script>
+
+/* DARK / LIGHT MODE */
+
+function toggleTheme(){
+document.body.classList.toggle('light-mode');
+}
+
+/* TYPING EFFECT */
+
+const textArray=[
+"Full Stack Developer",
+"Frontend Engineer",
+"UI/UX Enthusiast",
+"Problem Solver",
+"Tech Innovator"
+];
+
+let index=0;
+let charIndex=0;
+let currentText="";
+let isDeleting=false;
+
+function type(){
+
+const typing=document.getElementById("typing");
+
+if(index>=textArray.length){
+index=0;
+}
+
+currentText=textArray[index];
+
+if(!isDeleting){
+typing.textContent=currentText.substring(0,charIndex++);
+if(charIndex>currentText.length){
+isDeleting=true;
+setTimeout(type,1200);
+return;
+}
+}
+else{
+typing.textContent=currentText.substring(0,charIndex--);
+if(charIndex<0){
+isDeleting=false;
+index++;
+}
+}
+
+setTimeout(type,isDeleting?50:100);
+}
+
+type();
+
+</script>
+
+</body>
+</html>
